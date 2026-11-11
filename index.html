@@ -65,25 +65,20 @@
 <body class="min-h-screen pb-12 flex flex-col justify-between">
 
     <!-- Zaglavlje / Header -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="bg-brand-orange p-2.5 rounded-xl text-white shadow-lg shadow-brand-orange/30">
-                    <i class="fa-solid fa-border-all text-2xl"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight text-white uppercase">Ogradni Systems</h1>
-                    <p class="text-xs text-slate-400">Prodaja i profesionalna ugradnja ograda</p>
-                </div>
-            </div>
-            
-            <!-- Podešavanje broja primaoca upita -->
-            <div class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-2 text-xs">
-                <i class="fa-solid fa-phone-volume text-brand-orange"></i>
-                <span class="text-slate-300 font-medium">Broj za prijem upita:</span>
-                <input type="text" id="ownerPhone" value="+38269000000" class="bg-slate-900 border border-slate-600 text-brand-orange font-bold px-2 py-1 rounded w-32 focus:outline-none focus:border-brand-orange" title="Unesite vaš broj telefona na koji želite da vam kupci šalju poruke">
-            </div>
-        </div>
+   <header style="background: #1a1a1a; padding: 15px 20px; border-bottom: 3px solid #ff6600;">
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+    
+    <!-- Logo i Naslov -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <img src="Logo.png" alt="MONTEGATE Logo" style="height: 55px; width: auto; object-fit: contain;">
+      <div>
+        <h1 style="color: #ffffff; margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: 1px;">MONTEGATE</h1>
+        <p style="color: #cccccc; margin: 3px 0 0 0; font-size: 14px;">Ograde i kapije uz mogućnost dostave i ugradnje</p>
+      </div>
+    </div>
+
+  </div>
+</header>
     </header>
 
     <!-- Glavni Sadržaj -->
@@ -91,7 +86,7 @@
 
         <!-- Hero Tekst -->
         <div class="text-center mb-10">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Izračunajte ponudu za vašu ogradu</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Zatražite ponudu za vašu ogradu</h2>
             <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">Odaberite željene dimenzije, materijal i dodatne usluge, a zatim nam poslati direktan upit putem Vibera, WhatsApp-a ili SMS-a.</p>
         </div>
 
@@ -254,7 +249,7 @@
 
                             <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
                                 <input type="checkbox" id="checkPedestrianGate" class="w-5 h-5 accent-brand-orange rounded cursor-pointer">
-                                <span class="text-sm font-medium text-slate-200">Pešačka kapija</span>
+                                <span class="text-sm font-medium text-slate-200">Pješačka kapija</span>
                             </label>
 
                             <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
@@ -332,7 +327,7 @@
                             <span id="summaryInstallation" class="font-semibold text-emerald-400">Da</span>
                         </div>
                         <div class="flex justify-between py-1.5 border-b border-slate-700/50">
-                            <span class="text-slate-400">Pešačka kapija:</span>
+                            <span class="text-slate-400">Pješačka kapija:</span>
                             <span id="summaryPedestrianGate" class="font-semibold text-slate-400">Ne</span>
                         </div>
                         <div class="flex justify-between py-1.5 border-b border-slate-700/50">
@@ -487,7 +482,7 @@
                     `• Boja: ${color}\n` +
                     `• Dostava: ${delivery}\n` +
                     `• Ugradnja: ${installation}\n` +
-                    `• Pešačka kapija: ${pedestrianGate}\n` +
+                    `• Pješačka kapija: ${pedestrianGate}\n` +
                     `• Klizna/Dvokrilna kapija: ${driveGate}\n` +
                     `• Grad: ${city}\n\n` +
                     `Molim vas za procjenu cijene. Hvala!`;
