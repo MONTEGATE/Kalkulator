@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfigurator Ogradnih Sistema | Brza Ponuda</title>
+    <title>MONTEGATE | Ograde i kapije - Konfigurator</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome ikonice -->
@@ -42,11 +42,9 @@
             background-color: rgba(255, 87, 34, 0.1);
         }
         .color-radio:checked + label {
-            ring: 4px;
-            ring-color: #FF5722;
             border-color: #FF5722;
+            box-shadow: 0 0 0 2px #FF5722;
         }
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -57,28 +55,21 @@
             background: #334155;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
     </style>
 </head>
 <body class="min-h-screen pb-12 flex flex-col justify-between">
 
     <!-- Zaglavlje / Header -->
-   <header style="background: #1a1a1a; padding: 15px 20px; border-bottom: 3px solid #ff6600;">
-  <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
-    
-    <!-- Logo i Naslov -->
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="Logo.png" alt="MONTEGATE Logo" style="height: 55px; width: auto; object-fit: contain;">
-      <div>
-        <h1 style="color: #ffffff; margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: 1px;">MONTEGATE</h1>
-        <p style="color: #cccccc; margin: 3px 0 0 0; font-size: 14px;">Ograde i kapije uz mogućnost dostave i ugradnje</p>
-      </div>
-    </div>
-
-  </div>
-</header>
+    <header style="background: #1a1a1a; padding: 15px 20px; border-bottom: 3px solid #ff6600;">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="Logo.png" alt="MONTEGATE Logo" style="height: 55px; width: auto; object-fit: contain;">
+                <div>
+                    <h1 style="color: #ffffff; margin: 0; font-size: 26px; text-transform: uppercase; letter-spacing: 1px;">MONTEGATE</h1>
+                    <p style="color: #cccccc; margin: 3px 0 0 0; font-size: 14px;">Ograde i kapije uz mogućnost dostave i ugradnje</p>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Glavni Sadržaj -->
@@ -87,7 +78,7 @@
         <!-- Hero Tekst -->
         <div class="text-center mb-10">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Zatražite ponudu za vašu ogradu</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">Odaberite željene dimenzije, materijal i dodatne usluge, a zatim nam možete poslati direktan upit putem Vibera, WhatsApp-a ili SMS-a.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">Odaberite željene dimenzije, materijal i dodatne usluge, a zatim nam pošaljite direktan upit putem Vibera, WhatsApp-a ili SMS-a.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -95,60 +86,44 @@
             <!-- LEVA KOLONA: KONFIGURATOR -->
             <div class="lg:col-span-7 space-y-6">
 
-                <!-- 1. Tip Ograde -->
+                <!-- 1. Tip Ograde sa slikama -->
                 <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
                     <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">1. Izaberite Tip Ograde</label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="fenceTypeContainer">
                         
                         <div>
                             <input type="radio" id="type1" name="fenceType" value="3D Panel" checked class="hidden custom-radio">
-                            <label for="type1" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
-                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
-                                    <i class="fa-solid fa-layer-group text-lg"></i>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-slate-200">3D Panel</div>
-                                    <div class="text-xs text-slate-400">Klasični čvrsti ogradni paneli</div>
-                                </div>
+                            <label for="type1" class="flex flex-col p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <img src="images/3d-panel.jpg" alt="3D Panel" class="w-full h-28 object-cover rounded-lg mb-2 border border-slate-700">
+                                <div class="font-semibold text-slate-200">3D Panel</div>
+                                <div class="text-xs text-slate-400">Klasični čvrsti ogradni paneli</div>
                             </label>
                         </div>
 
                         <div>
                             <input type="radio" id="type2" name="fenceType" value="Dekorativna" class="hidden custom-radio">
-                            <label for="type2" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
-                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
-                                    <i class="fa-solid fa-[#FF5722] fa-wand-magic-sparkles text-lg"></i>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-slate-200">Dekorativna</div>
-                                    <div class="text-xs text-slate-400">Moderna vizuelna ograda</div>
-                                </div>
+                            <label for="type2" class="flex flex-col p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <img src="images/dekorativna.jpg" alt="Dekorativna" class="w-full h-28 object-cover rounded-lg mb-2 border border-slate-700">
+                                <div class="font-semibold text-slate-200">Dekorativna</div>
+                                <div class="text-xs text-slate-400">Moderna vizuelna ograda</div>
                             </label>
                         </div>
 
                         <div>
                             <input type="radio" id="type3" name="fenceType" value="Z-Roletna" class="hidden custom-radio">
-                            <label for="type3" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
-                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
-                                    <i class="fa-solid fa-eye-slash text-lg"></i>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-slate-200">Z-Roletna</div>
-                                    <div class="text-xs text-slate-400">Za neprozirnost i privatnost</div>
-                                </div>
+                            <label for="type3" class="flex flex-col p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <img src="images/z-roletna.jpg" alt="Z-Roletna" class="w-full h-28 object-cover rounded-lg mb-2 border border-slate-700">
+                                <div class="font-semibold text-slate-200">Z-Roletna</div>
+                                <div class="text-xs text-slate-400">Za neprozirnost i privatnost</div>
                             </label>
                         </div>
 
                         <div>
                             <input type="radio" id="type4" name="fenceType" value="CNC Laserski rezana" class="hidden custom-radio">
-                            <label for="type4" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
-                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
-                                    <i class="fa-solid fa-bolt-lightning text-lg"></i>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-slate-200">CNC Laserski rezana</div>
-                                    <div class="text-xs text-slate-400">Unikatni motivi po želji</div>
-                                </div>
+                            <label for="type4" class="flex flex-col p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <img src="images/cnc.jpg" alt="CNC Laserski rezana" class="w-full h-28 object-cover rounded-lg mb-2 border border-slate-700">
+                                <div class="font-semibold text-slate-200">CNC Laserski rezana</div>
+                                <div class="text-xs text-slate-400">Unikatni motivi po želji</div>
                             </label>
                         </div>
 
@@ -159,7 +134,6 @@
                 <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
                     <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">2. Unesite Dimenzije</label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-2">Ukupna dužina ograde (u metrima)</label>
                             <div class="relative">
@@ -183,7 +157,6 @@
                                 <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-slate-500 text-xs pointer-events-none"></i>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -191,7 +164,6 @@
                 <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
                     <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">3. Odaberite Boju</label>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                        
                         <div>
                             <input type="radio" id="color1" name="fenceColor" value="Antracit (RAL 7016)" checked class="hidden color-radio">
                             <label for="color1" class="flex flex-col items-center justify-center p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all text-center">
@@ -227,13 +199,11 @@
                                 <span class="text-[10px] text-slate-400">Pocinkovana</span>
                             </label>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- 4. Dodatne Usluge i Lokacija -->
                 <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl space-y-5">
-                    
                     <div>
                         <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-3">4. Dodatne Usluge i Kapije</label>
                         <div class="space-y-2.5">
@@ -284,7 +254,6 @@
                             <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-slate-500 text-xs pointer-events-none"></i>
                         </div>
                     </div>
-
                 </div>
 
             </div>
@@ -388,7 +357,7 @@
     <!-- Podnožje / Footer -->
     <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500 mt-12">
         <div class="max-w-6xl mx-auto px-4">
-            <p>© <span id="yearSpan"></span> Prodaja i Montaža Ogradnih Sistema. Sva prava zadržana.</p>
+            <p>© <span id="yearSpan"></span> MONTEGATE - Prodaja i Montaža Ogradnih Sistema. Sva prava zadržana.</p>
         </div>
     </footer>
 
@@ -398,8 +367,10 @@
             // Postavljanje tekuće godine u podnožju
             document.getElementById('yearSpan').textContent = new Date().getFullYear();
 
+            // Fiksni broj telefona prodavca (Zameni sa svojim pravim brojem, npr. 38269123456)
+            const ownerPhone = "38269XXXXXX";
+
             // Elementi unosa
-            const ownerPhoneInput = document.getElementById('ownerPhone');
             const lengthInput = document.getElementById('lengthInput');
             const heightSelect = document.getElementById('heightSelect');
             const checkDelivery = document.getElementById('checkDelivery');
@@ -424,16 +395,6 @@
             const viberBtn = document.getElementById('viberBtn');
             const smsBtn = document.getElementById('smsBtn');
 
-            // Pamćenje unešenog broja u LocalStorage
-            if (localStorage.getItem('savedOwnerPhone')) {
-                ownerPhoneInput.value = localStorage.getItem('savedOwnerPhone');
-            }
-
-            ownerPhoneInput.addEventListener('input', function() {
-                localStorage.setItem('savedOwnerPhone', this.value);
-                updateAll();
-            });
-
             // Funkcija za preuzimanje vrednosti iz radio dugmadi
             function getSelectedRadioValue(name) {
                 const checked = document.querySelector(`input[name="${name}"]:checked`);
@@ -442,7 +403,6 @@
 
             // Glavna funkcija za ažuriranje stanja i linkova
             function updateAll() {
-                // 1. Očitavanje podataka
                 const type = getSelectedRadioValue('fenceType');
                 const length = lengthInput.value || 0;
                 const height = heightSelect.value;
@@ -452,9 +412,8 @@
                 const pedestrianGate = checkPedestrianGate.checked ? 'Da' : 'Ne';
                 const driveGate = checkDriveGate.checked ? 'Da' : 'Ne';
                 const city = citySelect.value;
-                let ownerPhone = ownerPhoneInput.value.trim().replace(/\s+/g, '');
 
-                // 2. Ažuriranje Live Summary polja
+                // Ažuriranje Live Summary polja
                 summaryType.textContent = type;
                 summaryLength.textContent = length + ' m';
                 summaryHeight.textContent = height;
@@ -474,8 +433,8 @@
                 
                 summaryCity.textContent = city;
 
-                // 3. Generisanje Teksta Poruke
-                const rawMessage = `Poštovani, želio/la bih ponudu za ogradni sistem:\n\n` +
+                // Generisanje Teksta Poruke
+                const rawMessage = `Poštovani, želio/la bih ponudu za ogradni sistem sa sajta MONTEGATE:\n\n` +
                     `• Tip ograde: ${type}\n` +
                     `• Dužina ograde: ${length} m\n` +
                     `• Visina ograde: ${height}\n` +
@@ -488,12 +447,11 @@
                     `Molim vas za procjenu cijene. Hvala!`;
 
                 const encodedMessage = encodeURIComponent(rawMessage);
-                const cleanPhone = ownerPhone.replace('+', '');
 
-                // 4. Ažuriranje Linkova na dugmićima
-                whatsappBtn.href = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
-                viberBtn.href = `viber://send?text=${encodedMessage}`;
-                smsBtn.href = `sms:${ownerPhone}?body=${encodedMessage}`;
+                // Ažuriranje Linkova na dugmićima
+                whatsappBtn.href = `https://wa.me/${ownerPhone}?text=${encodedMessage}`;
+                viberBtn.href = `viber://chat?number=%2B${ownerPhone}&text=${encodedMessage}`;
+                smsBtn.href = `sms:+${ownerPhone}?body=${encodedMessage}`;
             }
 
             // Dodavanje event listener-a na sve kontrole
