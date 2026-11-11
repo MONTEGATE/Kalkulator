@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfigurator Ogradnih Sistema | Brza Ponuda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome ikonice -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF5722',
+                            orangeHover: '#E64A19',
+                            dark: '#1E293B',
+                            slate: '#0F172A',
+                            viber: '#7360F2',
+                            whatsapp: '#25D366',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .custom-radio:checked + label {
+            border-color: #FF5722;
+            background-color: rgba(255, 87, 34, 0.1);
+        }
+        .color-radio:checked + label {
+            ring: 4px;
+            ring-color: #FF5722;
+            border-color: #FF5722;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12 flex flex-col justify-between">
+
+    <!-- Zaglavlje / Header -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-orange p-2.5 rounded-xl text-white shadow-lg shadow-brand-orange/30">
+                    <i class="fa-solid fa-border-all text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white uppercase">Ogradni Systems</h1>
+                    <p class="text-xs text-slate-400">Prodaja i profesionalna ugradnja ograda</p>
+                </div>
+            </div>
+            
+            <!-- Podešavanje broja primaoca upita -->
+            <div class="bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-2 text-xs">
+                <i class="fa-solid fa-phone-volume text-brand-orange"></i>
+                <span class="text-slate-300 font-medium">Broj za prijem upita:</span>
+                <input type="text" id="ownerPhone" value="+38269000000" class="bg-slate-900 border border-slate-600 text-brand-orange font-bold px-2 py-1 rounded w-32 focus:outline-none focus:border-brand-orange" title="Unesite vaš broj telefona na koji želite da vam kupci šalju poruke">
+            </div>
+        </div>
+    </header>
+
+    <!-- Glavni Sadržaj -->
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full">
+
+        <!-- Hero Tekst -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Izračunajte ponudu za vašu ogradu</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">Odaberite željene dimenzije, materijal i dodatne usluge, a zatim nam poslati direktan upit putem Vibera, WhatsApp-a ili SMS-a.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- LEVA KOLONA: KONFIGURATOR -->
+            <div class="lg:col-span-7 space-y-6">
+
+                <!-- 1. Tip Ograde -->
+                <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
+                    <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">1. Izaberite Tip Ograde</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="fenceTypeContainer">
+                        
+                        <div>
+                            <input type="radio" id="type1" name="fenceType" value="3D Panel" checked class="hidden custom-radio">
+                            <label for="type1" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
+                                    <i class="fa-solid fa-layer-group text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">3D Panel</div>
+                                    <div class="text-xs text-slate-400">Klasični čvrsti ogradni paneli</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="type2" name="fenceType" value="Dekorativna" class="hidden custom-radio">
+                            <label for="type2" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
+                                    <i class="fa-solid fa-[#FF5722] fa-wand-magic-sparkles text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">Dekorativna</div>
+                                    <div class="text-xs text-slate-400">Moderna vizuelna ograda</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="type3" name="fenceType" value="Z-Roletna" class="hidden custom-radio">
+                            <label for="type3" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
+                                    <i class="fa-solid fa-eye-slash text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">Z-Roletna</div>
+                                    <div class="text-xs text-slate-400">Za neprozirnost i privatnost</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="type4" name="fenceType" value="CNC Laserski rezana" class="hidden custom-radio">
+                            <label for="type4" class="flex items-center p-3.5 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all">
+                                <div class="p-2 bg-slate-800 rounded-lg text-slate-300 mr-3">
+                                    <i class="fa-solid fa-bolt-lightning text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">CNC Laserski rezana</div>
+                                    <div class="text-xs text-slate-400">Unikatni motivi po želji</div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 2. Dimenzije -->
+                <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
+                    <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">2. Unesite Dimenzije</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Ukupna dužina ograde (u metrima)</label>
+                            <div class="relative">
+                                <input type="number" id="lengthInput" min="1" max="1000" value="30" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:border-brand-orange transition-all pl-10">
+                                <i class="fa-solid fa-ruler-horizontal absolute left-3.5 top-3.5 text-slate-500"></i>
+                                <span class="absolute right-4 top-3 text-slate-400 font-semibold text-sm">m</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Visina ograde</label>
+                            <div class="relative">
+                                <select id="heightSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-brand-orange transition-all appearance-none pl-10 cursor-pointer">
+                                    <option value="100 cm">100 cm (1.0 m)</option>
+                                    <option value="120 cm">120 cm (1.2 m)</option>
+                                    <option value="150 cm" selected>150 cm (1.5 m)</option>
+                                    <option value="170 cm">170 cm (1.7 m)</option>
+                                    <option value="200 cm">200 cm (2.0 m)</option>
+                                </select>
+                                <i class="fa-solid fa-ruler-vertical absolute left-3.5 top-3.5 text-slate-500"></i>
+                                <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-slate-500 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3. Odabir Boje -->
+                <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl">
+                    <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-4">3. Odaberite Boju</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        
+                        <div>
+                            <input type="radio" id="color1" name="fenceColor" value="Antracit (RAL 7016)" checked class="hidden color-radio">
+                            <label for="color1" class="flex flex-col items-center justify-center p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all text-center">
+                                <span class="w-8 h-8 rounded-full bg-[#383E42] border border-slate-500 mb-2 shadow-md"></span>
+                                <span class="text-xs font-semibold text-slate-200">Antracit</span>
+                                <span class="text-[10px] text-slate-400">RAL 7016</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="color2" name="fenceColor" value="Zelena (RAL 6005)" class="hidden color-radio">
+                            <label for="color2" class="flex flex-col items-center justify-center p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all text-center">
+                                <span class="w-8 h-8 rounded-full bg-[#0F4326] border border-slate-500 mb-2 shadow-md"></span>
+                                <span class="text-xs font-semibold text-slate-200">Zelena</span>
+                                <span class="text-[10px] text-slate-400">RAL 6005</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="color3" name="fenceColor" value="Crna (RAL 9005)" class="hidden color-radio">
+                            <label for="color3" class="flex flex-col items-center justify-center p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all text-center">
+                                <span class="w-8 h-8 rounded-full bg-[#0A0A0A] border border-slate-500 mb-2 shadow-md"></span>
+                                <span class="text-xs font-semibold text-slate-200">Crna</span>
+                                <span class="text-[10px] text-slate-400">RAL 9005</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="color4" name="fenceColor" value="Srebrna / Pocinkovana" class="hidden color-radio">
+                            <label for="color4" class="flex flex-col items-center justify-center p-3 bg-slate-900/80 border-2 border-slate-700 rounded-xl cursor-pointer hover:border-slate-500 transition-all text-center">
+                                <span class="w-8 h-8 rounded-full bg-[#A5A9B0] border border-slate-500 mb-2 shadow-md"></span>
+                                <span class="text-xs font-semibold text-slate-200">Srebrna</span>
+                                <span class="text-[10px] text-slate-400">Pocinkovana</span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 4. Dodatne Usluge i Lokacija -->
+                <div class="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 p-5 rounded-2xl shadow-xl space-y-5">
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-3">4. Dodatne Usluge i Kapije</label>
+                        <div class="space-y-2.5">
+                            <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
+                                <input type="checkbox" id="checkDelivery" checked class="w-5 h-5 accent-brand-orange rounded cursor-pointer">
+                                <span class="text-sm font-medium text-slate-200">Dostava na adresu</span>
+                            </label>
+
+                            <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
+                                <input type="checkbox" id="checkInstallation" checked class="w-5 h-5 accent-brand-orange rounded cursor-pointer">
+                                <span class="text-sm font-medium text-slate-200">Ugradnja / Montaža</span>
+                            </label>
+
+                            <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
+                                <input type="checkbox" id="checkPedestrianGate" class="w-5 h-5 accent-brand-orange rounded cursor-pointer">
+                                <span class="text-sm font-medium text-slate-200">Pešačka kapija</span>
+                            </label>
+
+                            <label class="flex items-center space-x-3 p-3 bg-slate-900/60 border border-slate-700/70 rounded-xl cursor-pointer hover:bg-slate-900/90 transition-all">
+                                <input type="checkbox" id="checkDriveGate" class="w-5 h-5 accent-brand-orange rounded cursor-pointer">
+                                <span class="text-sm font-medium text-slate-200">Klizna / Dvokrilna kapija</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-700/50">
+
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-orange uppercase tracking-wider mb-2">5. Grad / Lokacija Radova</label>
+                        <div class="relative">
+                            <select id="citySelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-brand-orange transition-all appearance-none pl-10 cursor-pointer">
+                                <option value="Podgorica">Podgorica</option>
+                                <option value="Bar" selected>Bar</option>
+                                <option value="Nikšić">Nikšić</option>
+                                <option value="Budva">Budva</option>
+                                <option value="Tivat">Tivat</option>
+                                <option value="Kotor">Kotor</option>
+                                <option value="Herceg Novi">Herceg Novi</option>
+                                <option value="Bijelo Polje">Bijelo Polje</option>
+                                <option value="Berane">Berane</option>
+                                <option value="Cetinje">Cetinje</option>
+                                <option value="Ulcinj">Ulcinj</option>
+                                <option value="Pljevlja">Pljevlja</option>
+                                <option value="Danilovgrad">Danilovgrad</option>
+                                <option value="Drugi grad / Druga lokacija">Drugi grad / Druga lokacija</option>
+                            </select>
+                            <i class="fa-solid fa-location-dot absolute left-3.5 top-3.5 text-slate-500"></i>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-slate-500 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DESNA KOLONA: REZIME I DUGMIĆI ZA SLANJE -->
+            <div class="lg:col-span-5">
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-2xl sticky top-24">
+                    
+                    <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-4">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-list text-brand-orange"></i> Pregled Upita
+                        </h3>
+                        <span class="text-xs bg-brand-orange/20 text-brand-orange px-2.5 py-1 rounded-full font-semibold">U realnom vremenu</span>
+                    </div>
+
+                    <!-- Prikaz Izabranog -->
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Tip Ograde:</span>
+                            <span id="summaryType" class="font-semibold text-slate-100 text-right">3D Panel</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Ukupna Dužina:</span>
+                            <span id="summaryLength" class="font-semibold text-slate-100">30 m</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Visina:</span>
+                            <span id="summaryHeight" class="font-semibold text-slate-100">150 cm</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Boja:</span>
+                            <span id="summaryColor" class="font-semibold text-slate-100">Antracit</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Dostava:</span>
+                            <span id="summaryDelivery" class="font-semibold text-emerald-400">Da</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Ugradnja:</span>
+                            <span id="summaryInstallation" class="font-semibold text-emerald-400">Da</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Pešačka kapija:</span>
+                            <span id="summaryPedestrianGate" class="font-semibold text-slate-400">Ne</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-700/50">
+                            <span class="text-slate-400">Klizna/Dvokrilna:</span>
+                            <span id="summaryDriveGate" class="font-semibold text-slate-400">Ne</span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span class="text-slate-400">Grad / Lokacija:</span>
+                            <span id="summaryCity" class="font-semibold text-brand-orange">Bar</span>
+                        </div>
+                    </div>
+
+                    <!-- Poziv na akciju -->
+                    <div class="mt-6 pt-4 border-t border-slate-700">
+                        <p class="text-xs text-slate-400 text-center mb-4">Klikom na jedno od dugmadi ispod, otvoriće se aplikacija sa automatski pripremljenim tekstom vašeg upita.</p>
+                        
+                        <div class="space-y-3">
+                            <!-- WhatsApp Button -->
+                            <a id="whatsappBtn" href="#" target="_blank" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-3 transition-all shadow-lg shadow-green-900/20 active:scale-[0.98]">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Pošalji na WhatsApp</span>
+                            </a>
+
+                            <!-- Viber Button -->
+                            <a id="viberBtn" href="#" target="_blank" class="w-full bg-[#7360F2] hover:bg-[#6250db] text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-3 transition-all shadow-lg shadow-purple-900/20 active:scale-[0.98]">
+                                <i class="fa-brands fa-viber text-2xl"></i>
+                                <span>Pošalji na Viber</span>
+                            </a>
+
+                            <!-- SMS Button -->
+                            <a id="smsBtn" href="#" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-3 transition-all border border-slate-600 active:scale-[0.98]">
+                                <i class="fa-solid fa-comment-sms text-xl text-slate-300"></i>
+                                <span>Pošalji putem SMS-a</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Garancija i info -->
+                    <div class="mt-6 flex items-center justify-center gap-4 text-xs text-slate-400">
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved text-brand-orange"></i>
+                            <span>Garancija kvaliteta</span>
+                        </div>
+                        <span>•</span>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-brand-orange"></i>
+                            <span>Brz odgovor</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Podnožje / Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500 mt-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© <span id="yearSpan"></span> Prodaja i Montaža Ogradnih Sistema. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logika -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Postavljanje tekuće godine u podnožju
+            document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+            // Elementi unosa
+            const ownerPhoneInput = document.getElementById('ownerPhone');
+            const lengthInput = document.getElementById('lengthInput');
+            const heightSelect = document.getElementById('heightSelect');
+            const checkDelivery = document.getElementById('checkDelivery');
+            const checkInstallation = document.getElementById('checkInstallation');
+            const checkPedestrianGate = document.getElementById('checkPedestrianGate');
+            const checkDriveGate = document.getElementById('checkDriveGate');
+            const citySelect = document.getElementById('citySelect');
+
+            // Elementi rezimea
+            const summaryType = document.getElementById('summaryType');
+            const summaryLength = document.getElementById('summaryLength');
+            const summaryHeight = document.getElementById('summaryHeight');
+            const summaryColor = document.getElementById('summaryColor');
+            const summaryDelivery = document.getElementById('summaryDelivery');
+            const summaryInstallation = document.getElementById('summaryInstallation');
+            const summaryPedestrianGate = document.getElementById('summaryPedestrianGate');
+            const summaryDriveGate = document.getElementById('summaryDriveGate');
+            const summaryCity = document.getElementById('summaryCity');
+
+            // Dugmići
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const viberBtn = document.getElementById('viberBtn');
+            const smsBtn = document.getElementById('smsBtn');
+
+            // Pamćenje unešenog broja u LocalStorage
+            if (localStorage.getItem('savedOwnerPhone')) {
+                ownerPhoneInput.value = localStorage.getItem('savedOwnerPhone');
+            }
+
+            ownerPhoneInput.addEventListener('input', function() {
+                localStorage.setItem('savedOwnerPhone', this.value);
+                updateAll();
+            });
+
+            // Funkcija za preuzimanje vrednosti iz radio dugmadi
+            function getSelectedRadioValue(name) {
+                const checked = document.querySelector(`input[name="${name}"]:checked`);
+                return checked ? checked.value : '';
+            }
+
+            // Glavna funkcija za ažuriranje stanja i linkova
+            function updateAll() {
+                // 1. Očitavanje podataka
+                const type = getSelectedRadioValue('fenceType');
+                const length = lengthInput.value || 0;
+                const height = heightSelect.value;
+                const color = getSelectedRadioValue('fenceColor');
+                const delivery = checkDelivery.checked ? 'Da' : 'Ne';
+                const installation = checkInstallation.checked ? 'Da' : 'Ne';
+                const pedestrianGate = checkPedestrianGate.checked ? 'Da' : 'Ne';
+                const driveGate = checkDriveGate.checked ? 'Da' : 'Ne';
+                const city = citySelect.value;
+                let ownerPhone = ownerPhoneInput.value.trim().replace(/\s+/g, '');
+
+                // 2. Ažuriranje Live Summary polja
+                summaryType.textContent = type;
+                summaryLength.textContent = length + ' m';
+                summaryHeight.textContent = height;
+                summaryColor.textContent = color;
+                
+                summaryDelivery.textContent = delivery;
+                summaryDelivery.className = delivery === 'Da' ? 'font-semibold text-emerald-400' : 'font-semibold text-slate-400';
+                
+                summaryInstallation.textContent = installation;
+                summaryInstallation.className = installation === 'Da' ? 'font-semibold text-emerald-400' : 'font-semibold text-slate-400';
+                
+                summaryPedestrianGate.textContent = pedestrianGate;
+                summaryPedestrianGate.className = pedestrianGate === 'Da' ? 'font-semibold text-emerald-400' : 'font-semibold text-slate-400';
+
+                summaryDriveGate.textContent = driveGate;
+                summaryDriveGate.className = driveGate === 'Da' ? 'font-semibold text-emerald-400' : 'font-semibold text-slate-400';
+                
+                summaryCity.textContent = city;
+
+                // 3. Generisanje Teksta Poruke
+                const rawMessage = `Poštovani, želio/la bih ponudu za ogradni sistem:\n\n` +
+                    `• Tip ograde: ${type}\n` +
+                    `• Dužina ograde: ${length} m\n` +
+                    `• Visina ograde: ${height}\n` +
+                    `• Boja: ${color}\n` +
+                    `• Dostava: ${delivery}\n` +
+                    `• Ugradnja: ${installation}\n` +
+                    `• Pešačka kapija: ${pedestrianGate}\n` +
+                    `• Klizna/Dvokrilna kapija: ${driveGate}\n` +
+                    `• Grad: ${city}\n\n` +
+                    `Molim vas za procjenu cijene. Hvala!`;
+
+                const encodedMessage = encodeURIComponent(rawMessage);
+                const cleanPhone = ownerPhone.replace('+', '');
+
+                // 4. Ažuriranje Linkova na dugmićima
+                whatsappBtn.href = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+                viberBtn.href = `viber://send?text=${encodedMessage}`;
+                smsBtn.href = `sms:${ownerPhone}?body=${encodedMessage}`;
+            }
+
+            // Dodavanje event listener-a na sve kontrole
+            document.querySelectorAll('input[name="fenceType"]').forEach(el => el.addEventListener('change', updateAll));
+            document.querySelectorAll('input[name="fenceColor"]').forEach(el => el.addEventListener('change', updateAll));
+            lengthInput.addEventListener('input', updateAll);
+            heightSelect.addEventListener('change', updateAll);
+            checkDelivery.addEventListener('change', updateAll);
+            checkInstallation.addEventListener('change', updateAll);
+            checkPedestrianGate.addEventListener('change', updateAll);
+            checkDriveGate.addEventListener('change', updateAll);
+            citySelect.addEventListener('change', updateAll);
+
+            // Inicijalno pokretanje
+            updateAll();
+        });
+    </script>
+</body>
+</html>
